@@ -1,10 +1,15 @@
+import { filtersOptions } from '../App';
 import Filters from './Filters';
 
-const Header = () => {
+interface Props {
+  changeFilters: React.Dispatch<React.SetStateAction<filtersOptions>>;
+}
+
+const Header = ({ changeFilters }: Props) => {
   return (
     <header>
-      <h1>React Shop 🛒</h1>
-      <Filters />
+      <h1>👨‍💻 mikydev shop 🛒</h1>
+      <Filters changeFilters={changeFilters} />
     </header>
   );
 };

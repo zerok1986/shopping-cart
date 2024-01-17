@@ -4,6 +4,11 @@ import { products as initialProducts } from './mocks/products.json';
 import { Products } from './types/Products';
 import Header from './components/Header';
 
+export type filtersOptions = {
+  category: string;
+  minPrice: number;
+};
+
 const initialFilters = {
   category: 'all',
   minPrice: 0,
@@ -26,7 +31,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header changeFilters={setFilters} />
       <ProductsList products={filteredProducts} />
     </>
   );
