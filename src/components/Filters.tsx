@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './Filters.css';
-import { filtersOptions } from '../App';
+import { filtersOptions } from '../types/Filters';
 
 interface Props {
   changeFilters: React.Dispatch<React.SetStateAction<filtersOptions>>;

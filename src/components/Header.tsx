@@ -1,4 +1,4 @@
-import { filtersOptions } from '../App';
+import { filtersOptions } from '../types/Filters';
 import Filters from './Filters';
 
 interface Props {
