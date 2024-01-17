@@ -1,10 +1,8 @@
 import { useState } from 'react';
-import ProductsList from './components/ProductsList';
 import { products as initialProducts } from './mocks/products.json';
-import { Products } from './types/Products';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import useFilters from './hooks/useFilters';
+import { Footer, Header, ProductsList } from './components';
+import { Products } from './types';
+import { useFilters } from './hooks';
 
 function App() {
   const [products] = useState<Products>(initialProducts);

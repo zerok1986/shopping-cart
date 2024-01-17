@@ -1,11 +1,11 @@
-import { filtersOptions } from '../types/Filters';
-import Filters from './Filters';
+import { Filters } from '.';
+import { filtersOptions } from '../types';
 
 interface Props {
   changeFilters: React.Dispatch<React.SetStateAction<filtersOptions>>;
 }
 
-const Header = ({ changeFilters }: Props) => {
+export const Header = ({ changeFilters }: Props) => {
   return (
     <header>
       <h1>👨‍💻 mikydev shop 🛒</h1>
@@ -13,5 +13,3 @@ const Header = ({ changeFilters }: Props) => {
     </header>
   );
 };
-
-export default Header;

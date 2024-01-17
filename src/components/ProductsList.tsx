@@ -1,12 +1,12 @@
-import { Products } from '../types/Products';
-import { AddToCartIcon } from './Icons';
 import './ProductsList.css';
+import { Products } from '../types';
+import { AddToCartIcon } from './Icons';
 
 interface Props {
   products: Products;
 }
 
-const ProductsList = ({ products }: Props) => {
+export const ProductsList = ({ products }: Props) => {
   return (
     <main className="products">
       <ul>
@@ -27,5 +27,3 @@ const ProductsList = ({ products }: Props) => {
     </main>
   );
 };
-
-export default ProductsList;

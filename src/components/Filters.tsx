@@ -1,12 +1,12 @@
-import { useState } from 'react';
 import './Filters.css';
-import { filtersOptions } from '../types/Filters';
+import { useState } from 'react';
+import { filtersOptions } from '../types';
 
 interface Props {
   changeFilters: React.Dispatch<React.SetStateAction<filtersOptions>>;
 }
 
-const Filters = ({ changeFilters }: Props) => {
+export const Filters = ({ changeFilters }: Props) => {
   const [minPrice, setMinPrice] = useState<number>(0);
 
   const handleChangeMinPrice = (evt: React.ChangeEvent<HTMLInputElement>) => {
@@ -54,5 +54,3 @@ const Filters = ({ changeFilters }: Props) => {
     </section>
   );
 };
-
-export default Filters;
