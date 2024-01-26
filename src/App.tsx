@@ -1,5 +1,5 @@
 import { products as initialProducts } from './mocks/products.json';
-import { Footer, Header, ProductsList } from './components';
+import { Cart, Footer, Header, ProductsList } from './components';
 import { useFilters } from './hooks';
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
   return (
     <>
       <Header />
+      <Cart />
       <ProductsList products={filteredProducts} />
       <Footer />
     </>
