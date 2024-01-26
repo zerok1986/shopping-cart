@@ -1,12 +1,9 @@
 import './Footer.css';
-import { filtersOptions } from '../types';
 import { IS_DEVELOPMENT } from '../../config.ts';
+import { useFilters } from '../hooks/useFilters.ts';
 
-interface Props {
-  filters: filtersOptions;
-}
-
-export const Footer = ({ filters }: Props) => {
+export const Footer = () => {
+  const { filters } = useFilters();
   return IS_DEVELOPMENT ? (
     <footer className="footer">{JSON.stringify(filters, null, 2)}</footer>
   ) : (

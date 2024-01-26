@@ -1,17 +1,11 @@
 import './Filters.css';
-import { useState } from 'react';
-import { filtersOptions } from '../types';
+import { useFilters } from '../hooks';
 
-interface Props {
-  changeFilters: React.Dispatch<React.SetStateAction<filtersOptions>>;
-}
-
-export const Filters = ({ changeFilters }: Props) => {
-  const [minPrice, setMinPrice] = useState<number>(0);
+export const Filters = () => {
+  const { filters, setFilters } = useFilters();
 
   const handleChangeMinPrice = (evt: React.ChangeEvent<HTMLInputElement>) => {
-    setMinPrice(+evt.target.value);
-    changeFilters((prevState) => ({
+    setFilters((prevState) => ({
       ...prevState,
       minPrice: +evt.target.value,
     }));
@@ -20,7 +14,7 @@ export const Filters = ({ changeFilters }: Props) => {
   const handleChangeCategory = (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {
-    changeFilters((prevState) => ({
+    setFilters((prevState) => ({
       ...prevState,
       category: event.target.value,
     }));
@@ -36,8 +30,9 @@ export const Filters = ({ changeFilters }: Props) => {
           min="0"
           max="2000"
           onChange={handleChangeMinPrice}
+          value={filters.minPrice}
         />
-        <span>${minPrice}</span>
+        <span>${filters.minPrice}</span>
       </div>
       <div>
         <label htmlFor="category">Category</label>
